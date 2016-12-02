@@ -8,12 +8,13 @@ namespace WordCounter.Objects
   {
     public static int CountRepeats(string inputWord, string inputPhrase)
     {
+
       int wordInstanceCount = 0;
 
       List<string> phraseWords = new List<string>(inputPhrase.Split(' '));
 
       foreach (string word in phraseWords) {
-        if (word == inputWord)
+        if (word.ToLower() == inputWord.ToLower())
         {
           wordInstanceCount += 1;
         }
