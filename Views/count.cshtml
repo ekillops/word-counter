@@ -12,17 +12,20 @@
         <h1>Repeat Counter</h1>
       </div>
       <br>
-      <p>Results</p>
       <table class="table table-hover">
         <tr>
           <th>Word</th>
           <th>Occurences</th>
           <th>Phrase</th>
+          <th>Case Sensitive</th>
+          <th>Ignore Apostrophes</th>
         </tr>
         <tr>
           <td>@Model["word"]</td>
           <td>@Model["occurrences"]</td>
           <td>@Model["phrase"]</td>
+          <td>@Model["case-sensitive"]</td>
+          <td>@Model["ignore-apostrophes"]</td>
         </tr>
       </table>
       <a href="/" class="btn btn-default btn-md">Home</a>

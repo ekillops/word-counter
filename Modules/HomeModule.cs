@@ -23,7 +23,9 @@ namespace WordCounter
         {
           {"word", word},
           {"occurrences", occurrences},
-          {"phrase", phrase}
+          {"phrase", phrase},
+          {"case-sensitive", (caseSensitive) ? "Yes" : "No"},
+          {"ignore-apostrophes", (ignoreApostrophes) ? "Yes" : "No"}
         };
 
         return View["count.cshtml", returnModel];
