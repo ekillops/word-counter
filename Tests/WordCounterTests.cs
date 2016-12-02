@@ -8,6 +8,7 @@ namespace WordCounterTests
   {
     [Theory]
     [InlineData("a", "a", 1)]
+    [InlineData("cat", "the fat cat", 1)]
     public void CountRepeatTheory(string word, string phrase, int expectedResult)
     {
       Assert.Equal(expectedResult, RepeatCounter.CountRepeats(word, phrase));

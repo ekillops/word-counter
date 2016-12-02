@@ -6,13 +6,17 @@ namespace WordCounter.Objects
 {
   public static class RepeatCounter
   {
-    public static int CountRepeats(string word, string phrase)
+    public static int CountRepeats(string inputWord, string inputPhrase)
     {
       int wordInstanceCount = 0;
 
-      if (word ==  phrase)
-      {
-        wordInstanceCount += 1;
+      List<string> phraseWords = new List<string>(inputPhrase.Split(' '));
+
+      foreach (string word in phraseWords) {
+        if (word == inputWord)
+        {
+          wordInstanceCount += 1;
+        }
       }
       return wordInstanceCount;
     }
