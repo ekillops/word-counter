@@ -1,0 +1,24 @@
+
+SPEC >> Count instances of a single character in a single character phrase || Word: "a" Phrase: "a" || 1
+
+// A single lowercase character seems like the simplest possible input
+
+
+SPEC >> Count instances of a word in a multi word phrase || Word: "cat" Phrase: "the fat cat" || 1
+
+// A short lowercase word ups the complexity only ever so slightly
+
+
+SPEC >> Ignore case in phrase when counting || Word: "cat" Phrase: "the Fat CaT" || 1
+
+// Finding all instances allows our program to be indiscriminate in it's search
+
+
+SPEC >> Do not ignore case in phrase if search word is mixed case || Word: "South" Phrase: "south of South America" Match Case: Yes || 1
+
+// Allowing user to choose case specific gets more complex
+
+
+SPEC >> Ignore apostrophes in phrase when counting || Word: "it's" Phrase: "it's not its" Apostrophes: Ignore || 1
+
+// Similarly, additional options become more complex
