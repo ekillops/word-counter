@@ -1,8 +1,8 @@
 using Nancy;
 using System;
-using RepeatCounter.Objects;
+using WordCounter.Objects;
 
-namespace RepeatCounter
+namespace WordCounter
 {
   public class HomeModule : NancyModule
   {

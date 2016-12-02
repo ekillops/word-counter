@@ -2,10 +2,19 @@ using System;
 using System.Collections.Generic;
 
 
-namespace RepeatCounter.Objects
+namespace WordCounter.Objects
 {
-  public class //class name
+  public static class RepeatCounter
   {
-    //code here
+    public static int CountRepeats(string word, string phrase)
+    {
+      int wordInstanceCount = 0;
+
+      if (word ==  phrase)
+      {
+        wordInstanceCount += 1;
+      }
+      return wordInstanceCount;
+    }
   }
 }
