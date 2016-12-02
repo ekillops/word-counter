@@ -3,15 +3,31 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <link rel="stylesheet" href="../Content/css/styles.css" type="text/css">
     <title>Repeat Counter</title>
   </head>
   <body>
     <div class="container">
-      <h1>Repeat Counter</h1>
+      <div class="page-header">
+        <h1>Repeat Counter</h1>
+      </div>
       <br>
       <p>Results</p>
+      <table class="table table-hover">
+        <tr>
+          <th>Word</th>
+          <th>Occurences</th>
+          <th>Phrase</th>
+        </tr>
+        <tr>
+          <td>@Model["word"]</td>
+          <td>@Model["occurrences"]</td>
+          <td>@Model["phrase"]</td>
+        </tr>
+      </table>
       <a href="/" class="btn btn-default btn-md">Home</a>
+      <div class="bottom-line">
+      </div>
     </div>
   </body>
 </html>

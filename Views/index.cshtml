@@ -3,21 +3,37 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <link rel="stylesheet" href="../Content/css/styles.css" type="text/css">
     <title>Repeat Counter</title>
   </head>
   <body>
     <div class="container">
-      <h1>Repeat Counter</h1>
+      <div class="page-header">
+        <h1>Repeat Counter</h1>
+      </div>
       <br>
       <p>Enter a sentence or phrase and a word you would like to count and press 'Count' to find out how many times your word occurs within the phrase.</p>
-      <form action="/count" method="post">
-          <input class="form-control" type="text" name="sub-string" value="" placeholder="Word to count">
+      <form action="/count" method="get">
+          <label class="checkbox-inline">
+            <input type="checkbox" name="case-sensitive" value="true"> Match Case
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="ignore-apostrophes" value="true"> Ignore Apostrophes
+          </label>
           <br>
-          <input class="form-control" type="text" name="input-string" value="" placeholder="Phrase to count in">
+          <br>
+          <input class="form-control" type="text" name="word" value="" placeholder="Word to count">
+          <br>
+          <input class="form-control" type="text" name="phrase" value="" placeholder="Phrase to count in">
           <br>
         <button class="btn btn-default btn-md" type="submit">Count</button>
       </form>
+      <div class="bottom-line">
+      </div>
+      <br>
+      <p>
+        <small><strong>Note:</strong> Ignore Apostrophes will only ignore apostrophes occurring in the phrase. If apostrophes are entered in the word they will not be ignored.</small>
+      </p>
     </div>
   </body>
 </html>

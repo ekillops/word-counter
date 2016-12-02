@@ -1,10 +1,12 @@
-# Repeat Counter
+# _Repeat Counter_
 
-#### By **Erik Killops**
+#### _C# Word Counter, 12/2/2016_
+
+#### By _**Erik Killops**_
 
 ## Description
 
-Enter a phrase and a word or sequence of characters to count within the phrase and press 'Count'.
+_Enter a phrase and a word or sequence of characters to count within the phrase and press 'Count'. You will be taken to another page with your results showing the word, the phrase, and the number of occurrences._
 
 #### Specs
 
@@ -21,7 +23,7 @@ CountRepeats() Tests
 
 ## Setup/Installation Requirements
 
-Requires Windows and .Net
+_Requires Windows and .Net_
 
 Clone repository, run ">dnx kestrel" in Powershell and visit "localhost:5004".
 
@@ -33,3 +35,9 @@ None.
 ## Technologies Used
 
 HTML, C#, Nancy, Razor, Xunit.
+
+### License
+
+*GPL*
+
+Copyright (c) 2016 **_Erik Killops, Epicodus_**
