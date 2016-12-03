@@ -33,7 +33,9 @@ namespace WordCounter.Objects
 
       foreach (string word in phraseWords) {
 
-        string checkWord = (caseSensitive) ? word : word.ToLower(); // if not case sensitive call ToLower()
+        string checkWord = RemoveTrailingPunctuation(word);
+
+        checkWord = (caseSensitive) ? checkWord : checkWord.ToLower(); // if not case sensitive call ToLower()
         checkWord = (ignoreApostrophes) ? RemoveApostrophes(checkWord) : checkWord; // if ignoring apostrophes RemoveApostrophes() from word being checked against
 
         if (checkWord == inputWord)
@@ -56,5 +58,24 @@ namespace WordCounter.Objects
       }
       return outputWord;
     }
+
+    private static string RemoveTrailingPunctuation(string inputWord)
+    {
+
+      string badChars = ".,!?':;/\\";
+      int lastCharIndex = inputWord.Length - 1;
+      string lastChar = inputWord[lastCharIndex].ToString();
+
+
+      if (badChars.Contains(lastChar))
+      {
+        return inputWord.Remove(lastCharIndex);
+      }
+      else
+      {
+        return inputWord;
+      }
+    }
+
   }
 }

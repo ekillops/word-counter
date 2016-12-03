@@ -28,5 +28,19 @@ namespace WordCounterTests
     {
       Assert.Equal(expectedResult, RepeatCounter.CountRepeats(word, phrase, matchCase, ignoreApostrophes));
     }
+
+    [Theory]
+    [InlineData("red", "the color red.", false, false, 1)] // Spec 6 - Ignore punctuation at the end of a word in phrase
+    public void CountRepeats_IgnoreTrailingPunctuationTheory(string word, string phrase, bool matchCase, bool ignoreApostrophes, int expectedResult)
+    {
+      Assert.Equal(expectedResult, RepeatCounter.CountRepeats(word, phrase, matchCase, ignoreApostrophes));
+    }
+
+    // [Theory]
+    // [InlineData("its", "it's not its", false, true, 2)] // Spec 5 - Ignore apostrophes in phrase when counting if user chooses
+    // public void CountRepeats_ApostropheSensitiveTheory(string word, string phrase, bool matchCase, bool ignoreApostrophes, int expectedResult)
+    // {
+    //   Assert.Equal(expectedResult, RepeatCounter.CountRepeats(word, phrase, matchCase, ignoreApostrophes));
+    // }
   }
 }

@@ -22,3 +22,13 @@ SPEC >> Do not ignore case in phrase if search word is mixed case || Word: "Sout
 SPEC >> Ignore apostrophes in phrase when counting || Word: "it's" Phrase: "it's not its" Apostrophes: Ignore || 1
 
 // Similarly, additional options become more complex
+
+
+SPEC >> Ignore punctuation at the end of a word in phrase || Word: "red", Phrase: "the color red.", Match Case: No, Ignore Apostrophes: No || 1
+
+// About as complex as the previous spec. Added after submission, after realizing word followed by punctuation would not be counted
+
+
+SPEC >>  Count generically pluralized versions of words if specified || Word: "color", Phrase: "two colors", Match Case: No, Ignore Apostrophes: No, Plural: Yes || 1
+
+// Added after submission. Playing with program realized color did not match colors and seemed logically like it should be able to even if not technically a direct match
