@@ -36,11 +36,11 @@ namespace WordCounterTests
       Assert.Equal(expectedResult, RepeatCounter.CountRepeats(word, phrase, matchCase, ignoreApostrophes));
     }
 
-    // [Theory]
-    // [InlineData("its", "it's not its", false, true, 2)] // Spec 5 - Ignore apostrophes in phrase when counting if user chooses
-    // public void CountRepeats_ApostropheSensitiveTheory(string word, string phrase, bool matchCase, bool ignoreApostrophes, int expectedResult)
-    // {
-    //   Assert.Equal(expectedResult, RepeatCounter.CountRepeats(word, phrase, matchCase, ignoreApostrophes));
-    // }
+    [Theory]
+    [InlineData("color", "two colors", false, false, true, 1)] // Spec 7 - Count generically pluralized versions of words if specified
+    public void CountRepeats_ApostropheSensitiveTheory(string word, string phrase, bool matchCase, bool ignoreApostrophes, bool matchPlural, int expectedResult)
+    {
+      Assert.Equal(expectedResult, RepeatCounter.CountRepeats(word, phrase, matchCase, ignoreApostrophes, matchPlural));
+    }
   }
 }

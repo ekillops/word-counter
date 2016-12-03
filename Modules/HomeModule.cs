@@ -16,8 +16,9 @@ namespace WordCounter
         string phrase = Request.Query["phrase"];
         bool caseSensitive = Request.Query["case-sensitive"];
         bool ignoreApostrophes = Request.Query["ignore-apostrophes"];
+        bool includePlural = Request.Query["include-plural"];
 
-        string occurrences = RepeatCounter.CountRepeats(word, phrase, caseSensitive, ignoreApostrophes).ToString();
+        string occurrences = RepeatCounter.CountRepeats(word, phrase, caseSensitive, ignoreApostrophes, includePlural).ToString();
 
         Dictionary<string, string> returnModel = new Dictionary<string, string>()
         {
@@ -25,7 +26,8 @@ namespace WordCounter
           {"occurrences", occurrences},
           {"phrase", phrase},
           {"case-sensitive", (caseSensitive) ? "Yes" : "No"},
-          {"ignore-apostrophes", (ignoreApostrophes) ? "Yes" : "No"}
+          {"ignore-apostrophes", (ignoreApostrophes) ? "Yes" : "No"},
+          {"include-plural", (includePlural) ? "Yes" : "No"}
         };
 
         return View["count.cshtml", returnModel];

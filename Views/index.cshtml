@@ -20,6 +20,9 @@
           <label class="checkbox-inline">
             <input type="checkbox" name="ignore-apostrophes" value="true"> Ignore Apostrophes
           </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" name="include-plural" value="true"> Include Plurals
+          </label>
           <br>
           <br>
           <input class="form-control" type="text" name="word" value="" placeholder="Word to count">
@@ -31,9 +34,11 @@
       <div class="bottom-line">
       </div>
       <br>
-      <p>
-        <small><strong>Note:</strong> Ignore Apostrophes will only ignore apostrophes occurring in the phrase. If apostrophes are entered in the word they will not be ignored.</small>
-      </p>
+      <p><small>
+        <strong>Note:</strong>
+        <br>&bull; Ignore Apostrophes will only ignore apostrophes occurring in the phrase. If apostrophes are entered in the word they will not be ignored.
+        <br>&bull; Include Plural will include results that match the word appended with -s or -es, eg. 'cat' -> 'cats' and 'grass' -> 'grasses'.
+      </small></p>
     </div>
   </body>
 </html>
