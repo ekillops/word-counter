@@ -60,10 +60,10 @@ namespace WordCounter.Objects
       foreach (string word in phraseWords) {
 
         // Clean up word for easier checking against
-        string checkWord = RemoveTrailingPunctuation(word);
+        string checkWord = StripPunctuation(word);
         checkWord = (caseSensitive) ? checkWord : checkWord.ToLower();
         checkWord = (ignoreApostrophes) ? RemoveApostrophes(checkWord) : checkWord;
-
+        
         // create pluralized version of inputWord to check against
         string inputWordPlural = Pluralize(inputWord);
 
@@ -93,23 +93,16 @@ namespace WordCounter.Objects
       return outputWord;
     }
 
-    // Helper method to remove punctuation at the end of a word. "cat." -> "cat"
-    private static string RemoveTrailingPunctuation(string inputWord)
+    // Helper method to remove punctuation at the start and end of a word. "cat." -> "cat"
+    private static string StripPunctuation(string inputWord)
     {
 
-      string badChars = ".,!?':;/\\";
-      int lastCharIndex = inputWord.Length - 1;
-      string lastChar = inputWord[lastCharIndex].ToString();
+      char[] badChars = { '.', ',', '!', '?', '"', ':', ';', ')', '(' };
 
+      inputWord = inputWord.TrimStart(badChars);
+      inputWord = inputWord.TrimEnd(badChars);
 
-      if (badChars.Contains(lastChar))
-      {
-        return inputWord.Remove(lastCharIndex);
-      }
-      else
-      {
-        return inputWord;
-      }
+      return inputWord;
     }
 
     // Helper method to generically pluralize a word. "cat" -> "cats"

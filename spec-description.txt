@@ -32,3 +32,8 @@ SPEC >> Ignore punctuation at the end of a word in phrase || Word: "red", Phrase
 SPEC >>  Count generically pluralized versions of words if specified || Word: "color", Phrase: "two colors", Match Case: No, Ignore Apostrophes: No, Plural: Yes || 1
 
 // Added after submission. Playing with program realized color did not match colors and seemed logically like it should be able to even if not technically a direct match
+
+
+SPEC >> Ignore punctuation at the start of a word in phrase || Word: "hi", Phrase: ""Hi" he said.", Match Case: No, Ignore Apostrophes: No, Plural: No || 1
+
+// Added after submission. Wanted program to be able to handle quotes within phrase.

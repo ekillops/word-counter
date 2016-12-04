@@ -21,6 +21,7 @@ CountRepeats() Tests
 | Ignore apostrophes in phrase when counting if user chooses         | Word: "its", Phrase: "it's not its", Match Case: No, Ignore Apostrophes: Yes                   | 2      |
 | Ignore punctuation at the end of a word in phrase                  | Word: "red", Phrase: "the color red.", Match Case: No, Ignore Apostrophes: No                  | 1      |
 | Count generically pluralized versions of words if specified        | Word: "color", Phrase: "two colors", Match Case: No, Ignore Apostrophes: No, Plural: Yes       | 1      |
+| Ignore punctuation at the start of a word in phrase                | Word: "hi", Phrase: ""Hi" he said.", Match Case: No, Ignore Apostrophes: No, Plural: No        | 1      |
 
 
 ## Setup/Installation Requirements
