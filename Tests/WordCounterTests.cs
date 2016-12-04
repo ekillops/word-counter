@@ -44,7 +44,7 @@ namespace WordCounterTests
     }
 
     [Theory]
-    [InlineData("hi", "\"Hi\", he said.", false, false, false, 1)] // Spec 7 - Count generically pluralized versions of words if specified
+    [InlineData("hi", "\"Hi\", he said.", false, false, false, 1)] // Spec 8 - Ignore punctuation at the start of a word in phrase
     public void CountRepeats_IgnoreLeadingPunctuationTheory(string word, string phrase, bool matchCase, bool ignoreApostrophes, bool matchPlural, int expectedResult)
     {
       Assert.Equal(expectedResult, RepeatCounter.CountRepeats(word, phrase, matchCase, ignoreApostrophes, matchPlural));
